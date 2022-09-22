@@ -3,7 +3,7 @@
 <section class="banner" style="background-image: url('images/{{background}}')">{{title}}</section>
 <h2> {{title}} disponíveis para adoção</h2>
 {{/banner}}
-
+{{body}}
 <div class="container list">
 {{#list}}
     <div class="item">
@@ -14,4 +14,10 @@
     </div>
 {{/list}}
 </div>
+
+{{^list}}
+<div class="container no-list">
+    <h2>Não há animais disponiveis nestas condições.</h2>
+</div>
+{{/list}}
 {{>partials/footer}}

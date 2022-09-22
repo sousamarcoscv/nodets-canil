@@ -1,5 +1,5 @@
 import {Request,Response} from 'express';
-import{createMenuObject} from '../helpers/createMenuObject';
+import{createMenuObject,getMsgFromPet} from '../helpers/createMenuObject';
 import{Pet} from '../models/pet';
 
 
@@ -12,6 +12,8 @@ export const home = (req:Request, res:Response)=>{
         background:'allanimals.jpg'
         },
         list,
+        body:getMsgFromPet("all")
+
     });
 };
 
@@ -24,6 +26,7 @@ export const dogs = (req:Request, res:Response)=>{
             background:'banner_dog.jpg'
         },
         list,
+        body:getMsgFromPet("dog")
     });
 };
 
@@ -36,6 +39,7 @@ export const cats = (req:Request, res:Response)=>{
             background:'banner_cat.jpg'
         },
         list,
+        body:getMsgFromPet("cat")
     });
 };
 
@@ -48,5 +52,6 @@ export const fishes = (req:Request, res:Response)=>{
             background:'banner_fish.jpg'
         },
         list,
+        body:getMsgFromPet("fish")
     });
 };
